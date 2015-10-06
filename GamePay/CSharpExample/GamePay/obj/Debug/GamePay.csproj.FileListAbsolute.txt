@@ -1,0 +1,4 @@
+C:\Users\vince.su\Documents\Projects\GamePay\GamePay\bin\GamePay.dll
+C:\Users\vince.su\Documents\Projects\GamePay\GamePay\bin\GamePay.pdb
+C:\Users\vince.su\Documents\Projects\GamePay\GamePay\obj\Debug\GamePay.dll
+C:\Users\vince.su\Documents\Projects\GamePay\GamePay\obj\Debug\GamePay.pdb

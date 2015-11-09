@@ -1,0 +1,89 @@
+﻿@using AllPay.EInvoice.Integration.Enumeration
+@model AllPay.Einvoice.Integration.Sample.ViewModel.InvoiceNotifyViewModel
+@{
+    ViewBag.Title = "歐付寶電子支付";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "InvoiceNotify", FormMethod.Post))
+{
+    <h2>
+        發送通知</h2>
+    <div class="div1">
+        <table class="table">
+            <tr>
+                <th>
+                    廠商編號(必填)：
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.MerchantID, new { @Value = "2000132" })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    發票號碼(必填)：
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.InvoiceNo, new { @Value = "ZB00004912" })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    折讓編號(選填)：
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.AllowanceNo, new { @Value = "" })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    發送簡訊號碼(選填)：
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.Phone, new { @Value = "" })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    發送電子信箱(選填)：
+                </th>
+                <td>
+                    @Html.TextBoxFor(m => m.NotifyMail, new { @Value = "" })
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    發送方式(必填)：
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.Notify, new SelectList(Enum.GetValues(typeof(InvoiceNotifyEnum))))
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    發送內容類型(必填)：
+                </th>
+                <td>
+                    @Html.DropDownListFor(m => m.InvoiceTag, new SelectList(Enum.GetValues(typeof(InvoiceTagEnum))))
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    發送對象(必填)：
+                </th>
+                <td>
+                     @Html.DropDownListFor(m => m.Notified, new SelectList(Enum.GetValues(typeof(NotifiedObjectEnum))))
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+    <div class="buttonPanel">
+        <button type="submit">
+            送出</button>
+        <button type="reset">
+            重新填寫</button>
+    </div>  
+    <h2>顯示結果</h2>
+     <span id="answer" class="div1">@ViewBag.message</span>
+}

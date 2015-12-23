@@ -3110,6 +3110,11 @@
             儲值消費。
             </summary>
         </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.APPBARCODE">
+            <summary>
+            全家立即儲。
+            </summary>
+        </member>
         <member name="T:AllPay.Payment.Integration.AllInEscrow">
             <summary>
             歐付寶履約保證介接模組。

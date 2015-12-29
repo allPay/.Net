@@ -49,7 +49,7 @@ namespace AllPay.Einvoice.Integration.Sample.Controllers
             invc.DelayDay = Model.DelayDay;
             invc.ECBankID = Model.ECBankID;
             invc.Tsr = Model.Tsr;
-            invc.PayType = Model.PayType;
+            invc.payType = Model.PayType;
             invc.NotifyURL = Model.NotifyURL;
             invc.invType = Model.InvType;
 

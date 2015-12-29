@@ -206,7 +206,7 @@
                     延遲天數(必填)：
                 </th>
                 <td>
-                    @Html.TextBoxFor(m => m.DelayDay, new { @Value = "" })
+                    @Html.TextBoxFor(m => m.DelayDay, new { @Value = "1" })
                 </td>
             </tr>
             <tr>
@@ -222,7 +222,7 @@
                     交易單號(必填)：
                 </th>
                 <td>
-                    @Html.TextBoxFor(m => m.Tsr, new { @Value = "" })
+                    @Html.TextBoxFor(m => m.Tsr, new { @Value = DateTime.Now.ToString("yyyyMMddHHmmdss") })
                 </td>
             </tr>
             <tr>

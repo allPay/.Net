@@ -514,6 +514,11 @@
             用戶端回傳付款結果的網址(※設定了此參數值，會使設定的ClientBackURL失效)。
             </summary>
         </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.SendArguments.UseRedeem">
+            <summary>
+            是否可以使用購物金/紅包折抵。
+            </summary>
+        </member>
         <member name="E:AllPay.Payment.Integration.AllInOneMetadata.SendArguments.PropertyChanged">
             <summary>
             屬性值變更時，所要觸發的事件。
@@ -3912,6 +3917,21 @@
             </summary>
             <param name="value">要檢核的物件類別。</param>
             <returns>驗證成功為 True 否則為 False。</returns>
+        </member>
+        <member name="T:AllPay.Payment.Integration.UseRedeemFlag">
+            <summary>
+            是否可以使用購物金/紅包折抵。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.Yes">
+            <summary>
+            使用折抵。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.No">
+            <summary>
+            不使用折抵。
+            </summary>
         </member>
     </members>
 </doc>

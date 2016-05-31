@@ -196,11 +196,6 @@
             儲值/餘額消費(歐付寶)
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.TopUpUsed_ESUN">
-            <summary>
-            儲值/餘額消費(玉山)
-            </summary>
-        </member>
         <member name="F:AllPay.Payment.Integration.PaymentMethodItem.BARCODE">
             <summary>
             超商條碼繳款。
@@ -3120,6 +3115,21 @@
             全家立即儲。
             </summary>
         </member>
+        <member name="T:AllPay.Payment.Integration.UseRedeemFlag">
+            <summary>
+            是否可以使用購物金/紅包折抵。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.Yes">
+            <summary>
+            使用折抵。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.No">
+            <summary>
+            不使用折抵。
+            </summary>
+        </member>
         <member name="T:AllPay.Payment.Integration.AllInEscrow">
             <summary>
             歐付寶履約保證介接模組。
@@ -3917,21 +3927,6 @@
             </summary>
             <param name="value">要檢核的物件類別。</param>
             <returns>驗證成功為 True 否則為 False。</returns>
-        </member>
-        <member name="T:AllPay.Payment.Integration.UseRedeemFlag">
-            <summary>
-            是否可以使用購物金/紅包折抵。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.Yes">
-            <summary>
-            使用折抵。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.No">
-            <summary>
-            不使用折抵。
-            </summary>
         </member>
     </members>
 </doc>

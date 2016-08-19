@@ -121,6 +121,31 @@
             土地銀行。
             </summary>
         </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_SHINKONG">
+            <summary>
+            新光銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TACHONG">
+            <summary>
+            大眾銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_SINOPAC">
+            <summary>
+            永豐銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_CHB">
+            <summary>
+            彰化銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TAICHUNG">
+            <summary>
+            台中銀行
+            </summary>
+        </member>
         <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TAISHIN">
             <summary>
             台新銀行。
@@ -154,6 +179,51 @@
         <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_FIRST">
             <summary>
             第一銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_ENTIE">
+            <summary>
+            安泰銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CATHAY">
+            <summary>
+            國泰世華。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_MEGA">
+            <summary>
+            兆豐銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_LAND">
+            <summary>
+            土地銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_YUANTA">
+            <summary>
+            元大銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TACHONG">
+            <summary>
+            大眾銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_SINOPAC">
+            <summary>
+            永豐銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CHB">
+            <summary>
+            彰化銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TAICHUNG">
+            <summary>
+            台中銀行。
             </summary>
         </member>
         <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS">

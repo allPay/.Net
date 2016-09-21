@@ -1,20 +1,21 @@
-# .Net
+# allPay歐付寶 全方位(All In One)金流介接 .Net版
 
-## 更新歷程 History
+## 1. 導覽
 
-- 2016-08-19
-	- 增加 ATM/WebATM 子付款方式。
+* allPay歐付寶金流服務對於有收款需求的賣家會員，提供完整的交易介接技術，並提供多種收款方式(All In One)選擇，
+包含信用卡、網路ATM、ATM櫃員機、超商代碼、財付通、allPay儲值消費等，
+本套件為.Net版，可以使用作建立訂單，接受付款通知，查詢訂單等金流交易應用。
 
-- 2016-06-27
-	- 移除歐付寶全方位金流SDK技術文件
-	- 移除電子發票整合SDK技術文件
+## 2. 安裝環境
 
-## 文件與說明 Documents & Help
+* .NET Framework3.5以上
 
-- https://developers.allpay.com.tw/Download/Summary
+## 3. 使用教學
 
-## 技術支援 Support
+* 詳細的教學說明可至[allPay開發者專區][]
 
-https://www.allpay.com.tw/service/service
+## 4. 聯絡我們
 
-Copyright © 2015 allPay Electronic Payment Co., Ltd.
+* allPay歐付寶 技術客服信箱：techsupport@allpay.com.tw
+
+[allPay開發者專區]: https://developers.allpay.com.tw/

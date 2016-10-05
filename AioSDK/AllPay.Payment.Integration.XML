@@ -4,33 +4,44 @@
         <name>AllPay.Payment.Integration</name>
     </assembly>
     <members>
-        <member name="T:AllPay.Payment.Integration.CompareByPaymentMethodAttribute">
+        <member name="T:AllPay.Payment.Integration.UseRedeemFlag">
             <summary>
-            依據付款方式檢核比較該填寫資料欄位的類別。
+            是否可以使用購物金/紅包折抵。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.#ctor(AllPay.Payment.Integration.PaymentMethod,System.String)">
+        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.Yes">
             <summary>
-            依據付款方式檢核比較該填寫資料欄位的類別建構式。
-            </summary>
-            <param name="paymentMethod">付款方式。</param>
-            <param name="confirmPropertyNames">要檢查的屬性欄位名稱(多個以/符號分隔)。</param>
-        </member>
-        <member name="M:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.IsValid(System.Object)">
-            <summary>
-            是否檢核通過。
-            </summary>
-            <param name="value">要檢核的物件類別。</param>
-            <returns>驗證成功為 True 否則為 False。</returns>
-        </member>
-        <member name="P:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.PaymentMethod">
-            <summary>
-            付款方式。
+            使用折抵。
             </summary>
         </member>
-        <member name="P:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.ConfirmPropertyNames">
+        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.No">
             <summary>
-            要檢查的屬性欄位名稱(多個以/符號分隔)。
+            不使用折抵。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.PaymentState">
+            <summary>
+            付款狀態。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentState.ALL">
+            <summary>
+            全部。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentState.Nonpayment">
+            <summary>
+            未付款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentState.Paid">
+            <summary>
+            已付款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentState.Fail">
+            <summary>
+            平台商。
             </summary>
         </member>
         <member name="T:AllPay.Payment.Integration.RequiredByPaymentMethodAttribute">
@@ -56,231 +67,6 @@
             付款方式。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.PaymentMethodItem">
-            <summary>
-            付款方式子項目。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.None">
-            <summary>
-            不指定。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TAISHIN">
-            <summary>
-            台新銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_ESUN">
-            <summary>
-            玉山銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_HUANAN">
-            <summary>
-            華南銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_BOT">
-            <summary>
-            台灣銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_FUBON">
-            <summary>
-            台北富邦。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_CHINATRUST">
-            <summary>
-            中國信託。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_FIRST">
-            <summary>
-            第一銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_CATHAY">
-            <summary>
-            國泰世華。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_MEGA">
-            <summary>
-            兆豐銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_YUANTA">
-            <summary>
-            元大銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_LAND">
-            <summary>
-            土地銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_SHINKONG">
-            <summary>
-            新光銀行
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TACHONG">
-            <summary>
-            大眾銀行
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_SINOPAC">
-            <summary>
-            永豐銀行
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_CHB">
-            <summary>
-            彰化銀行
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TAICHUNG">
-            <summary>
-            台中銀行
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TAISHIN">
-            <summary>
-            台新銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_ESUN">
-            <summary>
-            玉山銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_HUANAN">
-            <summary>
-            華南銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_BOT">
-            <summary>
-            台灣銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_FUBON">
-            <summary>
-            台北富邦。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CHINATRUST">
-            <summary>
-            中國信託。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_FIRST">
-            <summary>
-            第一銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_ENTIE">
-            <summary>
-            安泰銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CATHAY">
-            <summary>
-            國泰世華。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_MEGA">
-            <summary>
-            兆豐銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_LAND">
-            <summary>
-            土地銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_YUANTA">
-            <summary>
-            元大銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TACHONG">
-            <summary>
-            大眾銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_SINOPAC">
-            <summary>
-            永豐銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CHB">
-            <summary>
-            彰化銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TAICHUNG">
-            <summary>
-            台中銀行。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS">
-            <summary>
-            超商代碼繳款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_OK">
-            <summary>
-            OK超商代碼繳款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_FAMILY">
-            <summary>
-            全家超商代碼繳款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_HILIFE">
-            <summary>
-            萊爾富超商代碼繳款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_IBON">
-            <summary>
-            7-11 ibon代碼繳款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.Alipay">
-            <summary>
-            支付寶。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.Tenpay">
-            <summary>
-            財付通。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.TopUpUsed_AllPay">
-            <summary>
-            儲值/餘額消費(歐付寶)
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.BARCODE">
-            <summary>
-            超商條碼繳款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.Credit">
-            <summary>
-            信用卡(MasterCard/JCB/VISA)。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.COD">
-            <summary>
-            貨到付款。
-            </summary>
-        </member>
         <member name="T:AllPay.Payment.Integration.AllInOneMetadata">
             <summary>
             全功能介接參數的類別。
@@ -298,13 +84,13 @@
             全功能介接參數的類別。
             </summary>
             <summary>
+            全功能介接參數的類別。
+            </summary>
+            <summary>
+            全功能介接參數的類別。
+            </summary>
+            <summary>
             
-            </summary>
-            <summary>
-            全功能介接參數的類別。
-            </summary>
-            <summary>
-            全功能介接參數的類別。
             </summary>
         </member>
         <member name="T:AllPay.Payment.Integration.CommonMetadata">
@@ -480,19 +266,98 @@
             介接廠商下載對帳媒體檔的資料傳遞成員。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.AllInOneMetadata.QueryArguments">
+        <member name="T:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments">
+            <summary>
+            介接廠商退款的資料傳遞成員類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.#ctor">
+            <summary>
+            廠商退款介接參數的建構式。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.RaisePropertyEvents``1(System.Linq.Expressions.Expression{System.Func{AllPay.Payment.Integration.AllInOneMetadata.SendArguments,``0}})">
+            <summary>
+            屬性變更時，觸發變更事件的方法。
+            </summary>
+            <typeparam name="T">來源型別。</typeparam>
+            <param name="property">屬性。</param>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.MerchantTradeNo">
+            <summary>
+            廠商交易編號。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.TradeNo">
+            <summary>
+            AllPay 交易編號。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.ChargeBackTotalAmount">
+            <summary>
+            退款金額。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.Remark">
+            <summary>
+            執行的動作。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.PlatformID">
+            <summary>
+            特約合作平台商代號(預設: 空)。
+            </summary>
+        </member>
+        <member name="E:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.PropertyChanged">
+            <summary>
+            屬性變更的事件。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments">
             <summary>
             介接訂單查詢的資料傳遞成員類別。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.QueryArguments.#ctor">
+        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.#ctor">
             <summary>
-            介接訂單查詢的資料建構式。
+            訂單查詢介接參數的建構式。
             </summary>
         </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.QueryArguments.PlatformID">
+        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.RaisePropertyEvents``1(System.Linq.Expressions.Expression{System.Func{AllPay.Payment.Integration.AllInOneMetadata.SendArguments,``0}})">
+            <summary>
+            屬性變更時，觸發變更事件的方法。
+            </summary>
+            <typeparam name="T">來源型別。</typeparam>
+            <param name="property">屬性。</param>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.MerchantTradeNo">
+            <summary>
+            廠商交易編號。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.TradeNo">
+            <summary>
+            AllPay 交易編號。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.Action">
+            <summary>
+            執行的動作。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.TotalAmount">
+            <summary>
+            交易金額。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.PlatformID">
             <summary>
             特約合作平台商代號(預設: 空)。
+            </summary>
+        </member>
+        <member name="E:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.PropertyChanged">
+            <summary>
+            屬性變更的事件。
             </summary>
         </member>
         <member name="T:AllPay.Payment.Integration.AllInOneMetadata.SendArguments">
@@ -678,7 +543,7 @@
         </member>
         <member name="P:AllPay.Payment.Integration.AllInOneMetadata.SendExtendArguments.StoreExpireDate">
             <summary>
-            超商繳費截止時間(※CVS：以分為計算單位 BARCODE：以天為計算單位)。
+            超商繳費截止時間(※CVS：以分為計算單位)。
             </summary>
         </member>
         <member name="P:AllPay.Payment.Integration.AllInOneMetadata.SendExtendArguments.Desc_1">
@@ -906,6 +771,21 @@
             定期定額/貨到付款的執行結果相關資訊的網址。
             </summary>
         </member>
+        <member name="T:AllPay.Payment.Integration.AllInOneMetadata.QueryArguments">
+            <summary>
+            介接訂單查詢的資料傳遞成員類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.QueryArguments.#ctor">
+            <summary>
+            介接訂單查詢的資料建構式。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.QueryArguments.PlatformID">
+            <summary>
+            特約合作平台商代號(預設: 空)。
+            </summary>
+        </member>
         <member name="T:AllPay.Payment.Integration.AllInOneMetadata.TradeFileArguments">
             <summary>
             廠商下載對帳媒體檔的資料傳遞成員類別。
@@ -968,429 +848,29 @@
             屬性變更的事件。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments">
+        <member name="T:AllPay.Payment.Integration.InvoiceVehicleType">
             <summary>
-            介接訂單查詢的資料傳遞成員類別。
+            電子發票載具類型。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.#ctor">
+        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.None">
             <summary>
-            訂單查詢介接參數的建構式。
+            無。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.RaisePropertyEvents``1(System.Linq.Expressions.Expression{System.Func{AllPay.Payment.Integration.AllInOneMetadata.SendArguments,``0}})">
+        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.Member">
             <summary>
-            屬性變更時，觸發變更事件的方法。
+            歐付寶會員。
             </summary>
-            <typeparam name="T">來源型別。</typeparam>
-            <param name="property">屬性。</param>
         </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.MerchantTradeNo">
+        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.NaturalPersonEvidence">
             <summary>
-            廠商交易編號。
+            自然人憑證。
             </summary>
         </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.TradeNo">
+        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.PhoneBarcode">
             <summary>
-            AllPay 交易編號。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.Action">
-            <summary>
-            執行的動作。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.TotalAmount">
-            <summary>
-            交易金額。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.PlatformID">
-            <summary>
-            特約合作平台商代號(預設: 空)。
-            </summary>
-        </member>
-        <member name="E:AllPay.Payment.Integration.AllInOneMetadata.ActionArguments.PropertyChanged">
-            <summary>
-            屬性變更的事件。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments">
-            <summary>
-            介接廠商退款的資料傳遞成員類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.#ctor">
-            <summary>
-            廠商退款介接參數的建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.RaisePropertyEvents``1(System.Linq.Expressions.Expression{System.Func{AllPay.Payment.Integration.AllInOneMetadata.SendArguments,``0}})">
-            <summary>
-            屬性變更時，觸發變更事件的方法。
-            </summary>
-            <typeparam name="T">來源型別。</typeparam>
-            <param name="property">屬性。</param>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.MerchantTradeNo">
-            <summary>
-            廠商交易編號。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.TradeNo">
-            <summary>
-            AllPay 交易編號。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.ChargeBackTotalAmount">
-            <summary>
-            退款金額。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.Remark">
-            <summary>
-            執行的動作。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.PlatformID">
-            <summary>
-            特約合作平台商代號(預設: 空)。
-            </summary>
-        </member>
-        <member name="E:AllPay.Payment.Integration.AllInOneMetadata.ChargeBackArguments.PropertyChanged">
-            <summary>
-            屬性變更的事件。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute">
-            <summary>
-            依據是否開立電子發票檢查該欄位是否必填的類別。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.szaPhoneOrEmail">
-            <summary>
-            手機或郵件擇一條件檢查用的參數。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.szaAllowEmpty">
-            <summary>
-            手機或郵件擇一條件檢查用的參數。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.#ctor">
-            <summary>
-            依據是否開立電子發票檢查該欄位是否必填的類別建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.IsValid(System.Object)">
-            <summary>
-            是否檢核通過。
-            </summary>
-            <param name="value">要檢核的物件類別。</param>
-            <returns>驗證成功為 True 否則為 False。</returns>
-        </member>
-        <member name="T:AllPay.Payment.Integration.RequiredByDonationAttribute">
-            <summary>
-            依據是否捐贈電子發票檢查該欄位是否必填的類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByDonationAttribute.#ctor">
-            <summary>
-            依據是否捐贈電子發票檢查該欄位是否必填的類別建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByDonationAttribute.IsValid(System.Object)">
-            <summary>
-            是否檢核通過。
-            </summary>
-            <param name="value">要檢核的物件類別。</param>
-            <returns>驗證成功為 True 否則為 False。</returns>
-        </member>
-        <member name="T:AllPay.Payment.Integration.ShippingState">
-            <summary>
-            出貨狀態。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.ShippingState.Delivery">
-            <summary>
-            出貨。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.ShippingState.Cancel">
-            <summary>
-            取消出貨(當為無貨可出等原因需要取消出貨)。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.HttpMethod">
-            <summary>
-            傳遞服務的方法。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.HttpMethod.HttpGET">
-            <summary>
-            GET。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.HttpMethod.HttpPOST">
-            <summary>
-            POST。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.HttpMethod.ServerPOST">
-            <summary>
-            Server POST。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.HttpMethod.HttpSOAP">
-            <summary>
-            SOAP(WebService)。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata">
-            <summary>
-            履約保證介接參數的類別。
-            </summary>
-            <summary>
-            履約保證介接參數的類別。
-            </summary>
-            <summary>
-            履約保證介接參數的類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.#ctor">
-            <summary>
-            履約保證介接參數的建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.Send_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
-            <summary>
-            特定屬性參數修改時觸發同步異動的事件。
-            </summary>
-            <param name="sender">來源物件。</param>
-            <param name="e">提供 System.ComponentModel.INotifyPropertyChanged.PropertyChanged 事件的資料。</param>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Send">
-            <summary>
-            介接產生訂單的基本資料傳遞成員。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Query">
-            <summary>
-            介接訂單查詢的資料傳遞成員。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Delivery">
-            <summary>
-            介接出貨通知的資料傳遞成員。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Change">
-            <summary>
-            商品異常/取消訂單處理結果的資料傳遞成員。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments">
-            <summary>
-            出貨通知介接的資料傳遞成員類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.#ctor">
-            <summary>
-            出貨通知介接參數的建構式。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.MerchantTradeNo">
-            <summary>
-            廠商交易編號。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.TradeNo">
-            <summary>
-            廠商驗證時間(自動產生)。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.ShippingState">
-            <summary>
-            出貨狀態。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.ShippingDate">
-            <summary>
-            出貨時間。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.EncodeChartset">
-            <summary>
-            中文編碼格式。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.Remark">
-            <summary>
-            備註欄位。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments">
-            <summary>
-            出貨通知介接的資料傳遞成員類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.#ctor">
-            <summary>
-            出貨通知介接參數的建構式。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.MerchantTradeNo">
-            <summary>
-            廠商交易編號。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.TradeNo">
-            <summary>
-            AllPay 交易編號。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.InfoType">
-            <summary>
-            通知種類。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.RefundAmount">
-            <summary>
-            退款金額。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.Remark">
-            <summary>
-            備註欄位。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments">
-            <summary>
-            介接的基本資料傳遞成員類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.#ctor">
-            <summary>
-            介接的基本資料傳遞成員類別建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.Items_CollectionChanged(System.Object,AllPay.Payment.Integration.ItemCollectionEventArgs)">
-            <summary>
-            當產品集合被異動時，觸發連動的事件。
-            </summary>
-            <param name="sender">來源物件。</param>
-            <param name="e">提供 System.ComponentModel.INotifyPropertyChanged.PropertyChanged 事件的資料。</param>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.RaisePropertyEvents``1(System.Linq.Expressions.Expression{System.Func{AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments,``0}})">
-            <summary>
-            實作事件觸發時要處理的方法。
-            </summary>
-            <typeparam name="T">觸發事件的屬性型別。</typeparam>
-            <param name="property">屬性參數。</param>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.Currency">
-            <summary>
-            幣別。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.EncodeChartset">
-            <summary>
-            中文編碼格式。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.UseAllpayAddress">
-            <summary>
-            是否採用 Allpay 平台提供的住址(0: 不使用, 1: 使用)。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.CreditInstallment">
-            <summary>
-            刷卡分期期數(不提供分期，預設 0)。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.InstallmentAmount">
-            <summary>
-            使用刷卡分期的付款金額(不使用信用卡分期時，預設 0)。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.Redeem">
-            <summary>
-            信用卡是否使用紅利折抵(使用紅利折抵時，請設為 Y 時)。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.ShippingDate">
-            <summary>
-            預計出貨日。
-            </summary>
-        </member>
-        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.ConsiderHour">
-            <summary>
-            商品猶豫期時間(預設 168 小時)。
-            </summary>
-        </member>
-        <member name="E:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.PropertyChanged">
-            <summary>
-            屬性值變更時，所要觸發的事件。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.QueryArguments">
-            <summary>
-            介接訂單查詢的資料傳遞成員類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.QueryArguments.#ctor">
-            <summary>
-            介接訂單查詢的資料建構式。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.TradeDateType">
-            <summary>
-            查詢日期類型。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.TradeDateType.Payment">
-            <summary>
-            付款日期。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.TradeDateType.Appropriation">
-            <summary>
-            撥款日期。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.TradeDateType.Refund">
-            <summary>
-            退款日期。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.TradeDateType.Order">
-            <summary>
-            訂單日期。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.PaymentState">
-            <summary>
-            付款狀態。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentState.ALL">
-            <summary>
-            全部。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentState.Nonpayment">
-            <summary>
-            未付款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentState.Paid">
-            <summary>
-            已付款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentState.Fail">
-            <summary>
-            平台商。
+            手機條碼。
             </summary>
         </member>
         <member name="T:AllPay.Payment.Integration.NotifiedType">
@@ -1418,53 +898,34 @@
             商品無異常。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.ChannelProvider">
+        <member name="T:AllPay.Payment.Integration.ValidatePlatformArgumentsAttribute">
             <summary>
-            此處理站可建立不同型別的通道，用戶端使用這些通道將訊息傳送給各種已設定的服務端點。
+            依據 PlatformID 檢核比較可填寫資料欄位的類別。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.ChannelProvider.CreateChannel``1(System.String)">
+        <member name="M:AllPay.Payment.Integration.ValidatePlatformArgumentsAttribute.#ctor">
             <summary>
-            建立指定的型別通道。
-            </summary>
-            <typeparam name="TChannel">由通道處理站產生的通道型別。這個型別必須是 System.ServiceModel.Channels.IOutputChannel 或 System.ServiceModel.Channels.IRequestChannel。</typeparam>
-            <param name="uri">提供服務位置的位址(設定檔使用的模式為 CLASS 動態連結檔時，請帶入 Assembly Qualified Name：若組件有強勢名稱請帶入完整的 Assembly Qualified Name)。
-            Assembly Qualified Name 範例：System.Web.UI.WebControls.TextBox, System.Web、System.Web.UI.WebControls.TextBox, System.Web, Version=4.0.0.0、
-            System.Web.UI.WebControls.TextBox, System.Web, Version=4.0.0.0, Culture=neutral 或 System.Web.UI.WebControls.TextBox, System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-            </param>
-            <returns>由處理站所建立之 System.ServiceModel.Channels.IChannel 型別的 TChannel。</returns>
-        </member>
-        <member name="T:AllPay.Payment.Integration.PrintFlag">
-            <summary>
-            是否列印。
+            依據 PlatformID 檢核比較可填寫資料欄位的類別建構式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.PrintFlag.None">
+        <member name="M:AllPay.Payment.Integration.ValidatePlatformArgumentsAttribute.IsValid(System.Object)">
             <summary>
-            無(當 InvoiceMark=No 時，為該值)。
+            是否檢核通過。
+            </summary>
+            <param name="value">要檢核的物件類別。</param>
+            <returns>驗證成功為 True 否則為 False。</returns>
+        </member>
+        <member name="T:AllPay.Payment.Integration.EqualsByPaymentMethodAttribute">
+            <summary>
+            依據付款方式檢核比較欄位字串是否相符於付款方式的類別。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.PrintFlag.Yes">
+        <member name="M:AllPay.Payment.Integration.EqualsByPaymentMethodAttribute.#ctor">
             <summary>
-            要列印。
+            依據付款方式檢核比較欄位字串是否相符於付款方式的類別建構式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.PrintFlag.No">
-            <summary>
-            不列印。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.RequiredByPrintAttribute">
-            <summary>
-            依據列印註記檢查該欄位是否必填的類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByPrintAttribute.#ctor">
-            <summary>
-            依據列印註記檢查該欄位是否必填的類別建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByPrintAttribute.IsValid(System.Object)">
+        <member name="M:AllPay.Payment.Integration.EqualsByPaymentMethodAttribute.IsValid(System.Object)">
             <summary>
             是否檢核通過。
             </summary>
@@ -1495,6 +956,355 @@
             <summary>
             日。
             </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.PaymentMethodItem">
+            <summary>
+            付款方式子項目。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.None">
+            <summary>
+            不指定。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TAISHIN">
+            <summary>
+            台新銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_ESUN">
+            <summary>
+            玉山銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_HUANAN">
+            <summary>
+            華南銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_BOT">
+            <summary>
+            台灣銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_FUBON">
+            <summary>
+            台北富邦。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_CHINATRUST">
+            <summary>
+            中國信託。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_FIRST">
+            <summary>
+            第一銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_CATHAY">
+            <summary>
+            國泰世華。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_MEGA">
+            <summary>
+            兆豐銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_YUANTA">
+            <summary>
+            元大銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_LAND">
+            <summary>
+            土地銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_SHINKONG">
+            <summary>
+            新光銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TACHONG">
+            <summary>
+            大眾銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_SINOPAC">
+            <summary>
+            永豐銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_CHB">
+            <summary>
+            彰化銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.WebATM_TAICHUNG">
+            <summary>
+            台中銀行
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TAISHIN">
+            <summary>
+            台新銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_ESUN">
+            <summary>
+            玉山銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_HUANAN">
+            <summary>
+            華南銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_BOT">
+            <summary>
+            台灣銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_FUBON">
+            <summary>
+            台北富邦。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CHINATRUST">
+            <summary>
+            中國信託。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_FIRST">
+            <summary>
+            第一銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_ENTIE">
+            <summary>
+            安泰銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CATHAY">
+            <summary>
+            國泰世華。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_MEGA">
+            <summary>
+            兆豐銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_LAND">
+            <summary>
+            土地銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_YUANTA">
+            <summary>
+            元大銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TACHONG">
+            <summary>
+            大眾銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_SINOPAC">
+            <summary>
+            永豐銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_CHB">
+            <summary>
+            彰化銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.ATM_TAICHUNG">
+            <summary>
+            台中銀行。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS">
+            <summary>
+            超商代碼繳款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_OK">
+            <summary>
+            OK超商代碼繳款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_FAMILY">
+            <summary>
+            全家超商代碼繳款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_HILIFE">
+            <summary>
+            萊爾富超商代碼繳款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.CVS_IBON">
+            <summary>
+            7-11 ibon代碼繳款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.Alipay">
+            <summary>
+            支付寶。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.Tenpay">
+            <summary>
+            財付通。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.TopUpUsed_AllPay">
+            <summary>
+            儲值/餘額消費(歐付寶)
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.Credit">
+            <summary>
+            信用卡(MasterCard/JCB/VISA)。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PaymentMethodItem.COD">
+            <summary>
+            貨到付款。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.ExtraPaymentInfo">
+            <summary>
+            額外付款資訊。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ExtraPaymentInfo.Yes">
+            <summary>
+            需要額外付款資訊。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ExtraPaymentInfo.No">
+            <summary>
+            不需要額外付款資訊。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.DonatedInvoice">
+            <summary>
+            發票捐贈類型。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.DonatedInvoice.None">
+            <summary>
+            無(當 InvoiceMark=No 時，為該值)。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.DonatedInvoice.Yes">
+            <summary>
+            捐贈發票。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.DonatedInvoice.No">
+            <summary>
+            不捐贈發票。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.ShippingState">
+            <summary>
+            出貨狀態。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ShippingState.Delivery">
+            <summary>
+            出貨。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ShippingState.Cancel">
+            <summary>
+            取消出貨(當為無貨可出等原因需要取消出貨)。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.InvoiceState">
+            <summary>
+            電子發票開立註記。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.InvoiceState.Yes">
+            <summary>
+            需要開立電子發票。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.InvoiceState.No">
+            <summary>
+            不需要開立電子發票。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.CustomsClearance">
+            <summary>
+            報關方式。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.CustomsClearance.None">
+            <summary>
+            無(當 InvoiceMark=No 且 TaxType 不是零稅率時，為該值)。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.CustomsClearance.CustomsExport">
+            <summary>
+            經海關出口(當 TaxType 為零稅率時，可設定該值)。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.CustomsClearance.ECACustomsExport">
+            <summary>
+            非經海關出口(當 TaxType 為零稅率時，可設定該值)。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute">
+            <summary>
+            依據是否開立電子發票檢查該欄位是否必填的類別。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.szaPhoneOrEmail">
+            <summary>
+            手機或郵件擇一條件檢查用的參數。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.szaAllowEmpty">
+            <summary>
+            手機或郵件擇一條件檢查用的參數。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.#ctor">
+            <summary>
+            依據是否開立電子發票檢查該欄位是否必填的類別建構式。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.RequiredByInvoiceMarkAttribute.IsValid(System.Object)">
+            <summary>
+            是否檢核通過。
+            </summary>
+            <param name="value">要檢核的物件類別。</param>
+            <returns>驗證成功為 True 否則為 False。</returns>
+        </member>
+        <member name="T:AllPay.Payment.Integration.RequiredByCarruerTypeAttribute">
+            <summary>
+            依據載具類型檢查該欄位是否必填的類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.RequiredByCarruerTypeAttribute.#ctor">
+            <summary>
+            依據載具類型檢查該欄位是否必填的類別建構式。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.RequiredByCarruerTypeAttribute.IsValid(System.Object)">
+            <summary>
+            是否檢核通過。
+            </summary>
+            <param name="value">要檢核的物件類別。</param>
+            <returns>驗證成功為 True 否則為 False。</returns>
         </member>
         <member name="T:AllPay.Payment.Integration.PeriodCreditCardTradeInfo">
             <summary>
@@ -1626,79 +1436,22 @@
             授權碼。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.HoldTradeType">
+        <member name="T:AllPay.Payment.Integration.RequiredByPrintAttribute">
             <summary>
-            是否要延遲撥款。
+            依據列印註記檢查該欄位是否必填的類別。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.HoldTradeType.Yes">
+        <member name="M:AllPay.Payment.Integration.RequiredByPrintAttribute.#ctor">
             <summary>
-            要延遲撥款。
+            依據列印註記檢查該欄位是否必填的類別建構式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.HoldTradeType.No">
+        <member name="M:AllPay.Payment.Integration.RequiredByPrintAttribute.IsValid(System.Object)">
             <summary>
-            不要延遲撥款。
+            是否檢核通過。
             </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.ItemCollectionEventHandler">
-            <summary>
-            產品項目集合變更事件的 Handler。
-            </summary>
-            <param name="sender"></param>
-            <param name="e"></param>
-        </member>
-        <member name="T:AllPay.Payment.Integration.ItemCollectionEventArgs">
-            <summary>
-            產品項目集合變更事件的事件參數類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.ItemCollectionEventArgs.#ctor(System.Object,System.String)">
-            <summary>
-            產品項目集合變更事件的事件參數類別建構式。
-            </summary>
-            <param name="sender">觸發事件的物件來源。</param>
-            <param name="methodName">變更事件的方法名稱。</param>
-        </member>
-        <member name="P:AllPay.Payment.Integration.ItemCollectionEventArgs.MethodName">
-            <summary>
-            變更事件的方法名稱。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.PlatformState">
-            <summary>
-            訂單類型。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PlatformState.ALL">
-            <summary>
-            全部。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PlatformState.General">
-            <summary>
-            一般。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PlatformState.Platform">
-            <summary>
-            平台商。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.InvoiceState">
-            <summary>
-            電子發票開立註記。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.InvoiceState.Yes">
-            <summary>
-            需要開立電子發票。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.InvoiceState.No">
-            <summary>
-            不需要開立電子發票。
-            </summary>
+            <param name="value">要檢核的物件類別。</param>
+            <returns>驗證成功為 True 否則為 False。</returns>
         </member>
         <member name="T:AllPay.Payment.Integration.Item">
             <summary>
@@ -1819,6 +1572,56 @@
             資料集合被異動時的事件。
             </summary>
         </member>
+        <member name="T:AllPay.Payment.Integration.TradeDateType">
+            <summary>
+            查詢日期類型。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TradeDateType.Payment">
+            <summary>
+            付款日期。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TradeDateType.Appropriation">
+            <summary>
+            撥款日期。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TradeDateType.Refund">
+            <summary>
+            退款日期。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TradeDateType.Order">
+            <summary>
+            訂單日期。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.ActionType">
+            <summary>
+            信用卡訂單處理動作。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ActionType.C">
+            <summary>
+            關帳。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ActionType.R">
+            <summary>
+            退刷。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ActionType.E">
+            <summary>
+            取消。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.ActionType.N">
+            <summary>
+            放棄。
+            </summary>
+        </member>
         <member name="T:AllPay.Payment.Integration.RequiredByTaxTypeAttribute">
             <summary>
             依據課稅類別檢查該欄位是否必填的類別。
@@ -1835,6 +1638,36 @@
             </summary>
             <param name="value">要檢核的物件類別。</param>
             <returns>驗證成功為 True 否則為 False。</returns>
+        </member>
+        <member name="T:AllPay.Payment.Integration.TaxationType">
+            <summary>
+            課稅類型。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TaxationType.None">
+            <summary>
+            無(當 InvoiceMark=No 時，為該值)。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TaxationType.Taxable">
+            <summary>
+            應稅。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TaxationType.ZeroTaxRate">
+            <summary>
+            零稅率。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TaxationType.DutyFree">
+            <summary>
+            免稅。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.TaxationType.MixedTaxable">
+            <summary>
+            混合應稅。
+            </summary>
         </member>
         <member name="T:AllPay.Payment.Integration.AllInOne">
             <summary>
@@ -2953,6 +2786,273 @@
             取得或設定目前 HttpRequest 物件。
             </summary>
         </member>
+        <member name="T:AllPay.Payment.Integration.ItemCollectionEventHandler">
+            <summary>
+            產品項目集合變更事件的 Handler。
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:AllPay.Payment.Integration.ItemCollectionEventArgs">
+            <summary>
+            產品項目集合變更事件的事件參數類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.ItemCollectionEventArgs.#ctor(System.Object,System.String)">
+            <summary>
+            產品項目集合變更事件的事件參數類別建構式。
+            </summary>
+            <param name="sender">觸發事件的物件來源。</param>
+            <param name="methodName">變更事件的方法名稱。</param>
+        </member>
+        <member name="P:AllPay.Payment.Integration.ItemCollectionEventArgs.MethodName">
+            <summary>
+            變更事件的方法名稱。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.DeviceType">
+            <summary>
+            裝置類型。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.DeviceType.PC">
+            <summary>
+            桌機版付費頁面。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.DeviceType.Mobile">
+            <summary>
+            行動裝置版付費頁面。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata">
+            <summary>
+            履約保證介接參數的類別。
+            </summary>
+            <summary>
+            履約保證介接參數的類別。
+            </summary>
+            <summary>
+            履約保證介接參數的類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.#ctor">
+            <summary>
+            履約保證介接參數的建構式。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.Send_PropertyChanged(System.Object,System.ComponentModel.PropertyChangedEventArgs)">
+            <summary>
+            特定屬性參數修改時觸發同步異動的事件。
+            </summary>
+            <param name="sender">來源物件。</param>
+            <param name="e">提供 System.ComponentModel.INotifyPropertyChanged.PropertyChanged 事件的資料。</param>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Send">
+            <summary>
+            介接產生訂單的基本資料傳遞成員。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Query">
+            <summary>
+            介接訂單查詢的資料傳遞成員。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Delivery">
+            <summary>
+            介接出貨通知的資料傳遞成員。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.Change">
+            <summary>
+            商品異常/取消訂單處理結果的資料傳遞成員。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments">
+            <summary>
+            出貨通知介接的資料傳遞成員類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.#ctor">
+            <summary>
+            出貨通知介接參數的建構式。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.MerchantTradeNo">
+            <summary>
+            廠商交易編號。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.TradeNo">
+            <summary>
+            廠商驗證時間(自動產生)。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.ShippingState">
+            <summary>
+            出貨狀態。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.ShippingDate">
+            <summary>
+            出貨時間。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.EncodeChartset">
+            <summary>
+            中文編碼格式。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.DeliveryArguments.Remark">
+            <summary>
+            備註欄位。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments">
+            <summary>
+            介接的基本資料傳遞成員類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.#ctor">
+            <summary>
+            介接的基本資料傳遞成員類別建構式。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.Items_CollectionChanged(System.Object,AllPay.Payment.Integration.ItemCollectionEventArgs)">
+            <summary>
+            當產品集合被異動時，觸發連動的事件。
+            </summary>
+            <param name="sender">來源物件。</param>
+            <param name="e">提供 System.ComponentModel.INotifyPropertyChanged.PropertyChanged 事件的資料。</param>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.RaisePropertyEvents``1(System.Linq.Expressions.Expression{System.Func{AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments,``0}})">
+            <summary>
+            實作事件觸發時要處理的方法。
+            </summary>
+            <typeparam name="T">觸發事件的屬性型別。</typeparam>
+            <param name="property">屬性參數。</param>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.Currency">
+            <summary>
+            幣別。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.EncodeChartset">
+            <summary>
+            中文編碼格式。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.UseAllpayAddress">
+            <summary>
+            是否採用 Allpay 平台提供的住址(0: 不使用, 1: 使用)。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.CreditInstallment">
+            <summary>
+            刷卡分期期數(不提供分期，預設 0)。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.InstallmentAmount">
+            <summary>
+            使用刷卡分期的付款金額(不使用信用卡分期時，預設 0)。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.Redeem">
+            <summary>
+            信用卡是否使用紅利折抵(使用紅利折抵時，請設為 Y 時)。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.ShippingDate">
+            <summary>
+            預計出貨日。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.ConsiderHour">
+            <summary>
+            商品猶豫期時間(預設 168 小時)。
+            </summary>
+        </member>
+        <member name="E:AllPay.Payment.Integration.AllInEscrowMetadata.SendArguments.PropertyChanged">
+            <summary>
+            屬性值變更時，所要觸發的事件。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.QueryArguments">
+            <summary>
+            介接訂單查詢的資料傳遞成員類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.QueryArguments.#ctor">
+            <summary>
+            介接訂單查詢的資料建構式。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments">
+            <summary>
+            出貨通知介接的資料傳遞成員類別。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.#ctor">
+            <summary>
+            出貨通知介接參數的建構式。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.MerchantTradeNo">
+            <summary>
+            廠商交易編號。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.TradeNo">
+            <summary>
+            AllPay 交易編號。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.InfoType">
+            <summary>
+            通知種類。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.RefundAmount">
+            <summary>
+            退款金額。
+            </summary>
+        </member>
+        <member name="P:AllPay.Payment.Integration.AllInEscrowMetadata.OrderChangeArguments.Remark">
+            <summary>
+            備註欄位。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.HoldTradeType">
+            <summary>
+            是否要延遲撥款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.HoldTradeType.Yes">
+            <summary>
+            要延遲撥款。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.HoldTradeType.No">
+            <summary>
+            不要延遲撥款。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.ChannelProvider">
+            <summary>
+            此處理站可建立不同型別的通道，用戶端使用這些通道將訊息傳送給各種已設定的服務端點。
+            </summary>
+        </member>
+        <member name="M:AllPay.Payment.Integration.ChannelProvider.CreateChannel``1(System.String)">
+            <summary>
+            建立指定的型別通道。
+            </summary>
+            <typeparam name="TChannel">由通道處理站產生的通道型別。這個型別必須是 System.ServiceModel.Channels.IOutputChannel 或 System.ServiceModel.Channels.IRequestChannel。</typeparam>
+            <param name="uri">提供服務位置的位址(設定檔使用的模式為 CLASS 動態連結檔時，請帶入 Assembly Qualified Name：若組件有強勢名稱請帶入完整的 Assembly Qualified Name)。
+            Assembly Qualified Name 範例：System.Web.UI.WebControls.TextBox, System.Web、System.Web.UI.WebControls.TextBox, System.Web, Version=4.0.0.0、
+            System.Web.UI.WebControls.TextBox, System.Web, Version=4.0.0.0, Culture=neutral 或 System.Web.UI.WebControls.TextBox, System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+            </param>
+            <returns>由處理站所建立之 System.ServiceModel.Channels.IChannel 型別的 TChannel。</returns>
+        </member>
         <member name="T:AllPay.Payment.Integration.TheWordType">
             <summary>
             字軌類型。
@@ -2993,19 +3093,24 @@
             三聯式收銀機。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.ExtraPaymentInfo">
+        <member name="T:AllPay.Payment.Integration.PlatformState">
             <summary>
-            額外付款資訊。
+            訂單類型。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.ExtraPaymentInfo.Yes">
+        <member name="F:AllPay.Payment.Integration.PlatformState.ALL">
             <summary>
-            需要額外付款資訊。
+            全部。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.ExtraPaymentInfo.No">
+        <member name="F:AllPay.Payment.Integration.PlatformState.General">
             <summary>
-            不需要額外付款資訊。
+            一般。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PlatformState.Platform">
+            <summary>
+            平台商。
             </summary>
         </member>
         <member name="F:AllPay.Payment.Integration.MD5Encoder.Crypto">
@@ -3013,191 +3118,91 @@
             雜湊加密演算法物件。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.InvoiceVehicleType">
+        <member name="T:AllPay.Payment.Integration.ServerValidator">
             <summary>
-            電子發票載具類型。
+            伺服器端的 Model 驗證。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.None">
+        <member name="M:AllPay.Payment.Integration.ServerValidator.Validate(System.Object)">
             <summary>
-            無。
+            要驗證的結構描述。
+            </summary>
+            <param name="source">主要驗證的元件。</param>
+            <returns>驗證的訊息內容。</returns>
+        </member>
+        <member name="M:AllPay.Payment.Integration.ServerValidator.Validate(System.Object,System.Object)">
+            <summary>
+            要驗證的結構描述。
+            </summary>
+            <param name="relation">相關要驗證的元件。</param>
+            <param name="source">主要驗證的元件。</param>
+            <returns>驗證的訊息內容。</returns>
+        </member>
+        <member name="T:AllPay.Payment.Integration.Logger">
+            <summary>
+            記錄檔處理的靜態類別。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.Member">
+        <member name="F:AllPay.Payment.Integration.Logger.LOGGER_FULL_FILENAME">
             <summary>
-            歐付寶會員。
+            記錄檔儲存路徑格式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.NaturalPersonEvidence">
+        <member name="F:AllPay.Payment.Integration.Logger.swLogger">
             <summary>
-            自然人憑證。
+            處理 IO 資料的物件。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.InvoiceVehicleType.PhoneBarcode">
+        <member name="M:AllPay.Payment.Integration.Logger.#cctor">
             <summary>
-            手機條碼。
+            記錄檔處理的靜態類別建構式。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.TaxationType">
+        <member name="M:AllPay.Payment.Integration.Logger.Write(System.String)">
             <summary>
-            課稅類型。
+            寫入記錄檔。
+            </summary>
+            <param name="message">要寫入的訊息。</param>
+        </member>
+        <member name="M:AllPay.Payment.Integration.Logger.WriteLine(System.String)">
+            <summary>
+            寫入一行記錄檔。
+            </summary>
+            <param name="message">要寫入的訊息。</param>
+        </member>
+        <member name="M:AllPay.Payment.Integration.Logger.CreateInstance">
+            <summary>
+            建立處理 IO 資料的物件實例。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.TaxationType.None">
+        <member name="P:AllPay.Payment.Integration.Logger.FileName">
             <summary>
-            無(當 InvoiceMark=No 時，為該值)。
+            取得目前要使用的記錄檔檔名。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.TaxationType.Taxable">
+        <member name="T:AllPay.Payment.Integration.HttpMethod">
             <summary>
-            應稅。
+            傳遞服務的方法。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.TaxationType.ZeroTaxRate">
+        <member name="F:AllPay.Payment.Integration.HttpMethod.HttpGET">
             <summary>
-            零稅率。
+            GET。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.TaxationType.DutyFree">
+        <member name="F:AllPay.Payment.Integration.HttpMethod.HttpPOST">
             <summary>
-            免稅。
+            POST。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.TaxationType.MixedTaxable">
+        <member name="F:AllPay.Payment.Integration.HttpMethod.ServerPOST">
             <summary>
-            混合應稅。
+            Server POST。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.AllocateState">
+        <member name="F:AllPay.Payment.Integration.HttpMethod.HttpSOAP">
             <summary>
-            撥款狀態。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.AllocateState.ALL">
-            <summary>
-            全部。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.AllocateState.NoAppropriations">
-            <summary>
-            未撥款。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.AllocateState.Appropriations">
-            <summary>
-            已撥款。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.ActionType">
-            <summary>
-            信用卡訂單處理動作。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.ActionType.C">
-            <summary>
-            關帳。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.ActionType.R">
-            <summary>
-            退刷。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.ActionType.E">
-            <summary>
-            取消。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.ActionType.N">
-            <summary>
-            放棄。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.EqualsByPaymentMethodAttribute">
-            <summary>
-            依據付款方式檢核比較欄位字串是否相符於付款方式的類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.EqualsByPaymentMethodAttribute.#ctor">
-            <summary>
-            依據付款方式檢核比較欄位字串是否相符於付款方式的類別建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.EqualsByPaymentMethodAttribute.IsValid(System.Object)">
-            <summary>
-            是否檢核通過。
-            </summary>
-            <param name="value">要檢核的物件類別。</param>
-            <returns>驗證成功為 True 否則為 False。</returns>
-        </member>
-        <member name="T:AllPay.Payment.Integration.PaymentMethod">
-            <summary>
-            付款方式。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.ALL">
-            <summary>
-            不指定付款方式。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.Credit">
-            <summary>
-            信用卡付費。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.WebATM">
-            <summary>
-            網路 ATM。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.ATM">
-            <summary>
-            自動櫃員機。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.CVS">
-            <summary>
-            超商代碼。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.BARCODE">
-            <summary>
-            超商條碼。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.Alipay">
-            <summary>
-            支付寶。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.Tenpay">
-            <summary>
-            財付通。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.TopUpUsed">
-            <summary>
-            儲值消費。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.PaymentMethod.APPBARCODE">
-            <summary>
-            全家立即儲。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.UseRedeemFlag">
-            <summary>
-            是否可以使用購物金/紅包折抵。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.Yes">
-            <summary>
-            使用折抵。
-            </summary>
-        </member>
-        <member name="F:AllPay.Payment.Integration.UseRedeemFlag.No">
-            <summary>
-            不使用折抵。
+            SOAP(WebService)。
             </summary>
         </member>
         <member name="T:AllPay.Payment.Integration.AllInEscrow">
@@ -3847,156 +3852,136 @@
             取得或設定目前 HttpRequest 物件。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.ServerValidator">
+        <member name="T:AllPay.Payment.Integration.CompareByPaymentMethodAttribute">
             <summary>
-            伺服器端的 Model 驗證。
+            依據付款方式檢核比較該填寫資料欄位的類別。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.ServerValidator.Validate(System.Object)">
+        <member name="M:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.#ctor(AllPay.Payment.Integration.PaymentMethod,System.String)">
             <summary>
-            要驗證的結構描述。
+            依據付款方式檢核比較該填寫資料欄位的類別建構式。
             </summary>
-            <param name="source">主要驗證的元件。</param>
-            <returns>驗證的訊息內容。</returns>
+            <param name="paymentMethod">付款方式。</param>
+            <param name="confirmPropertyNames">要檢查的屬性欄位名稱(多個以/符號分隔)。</param>
         </member>
-        <member name="M:AllPay.Payment.Integration.ServerValidator.Validate(System.Object,System.Object)">
+        <member name="M:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.IsValid(System.Object)">
             <summary>
-            要驗證的結構描述。
+            是否檢核通過。
             </summary>
-            <param name="relation">相關要驗證的元件。</param>
-            <param name="source">主要驗證的元件。</param>
-            <returns>驗證的訊息內容。</returns>
+            <param name="value">要檢核的物件類別。</param>
+            <returns>驗證成功為 True 否則為 False。</returns>
         </member>
-        <member name="T:AllPay.Payment.Integration.DonatedInvoice">
+        <member name="P:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.PaymentMethod">
             <summary>
-            發票捐贈類型。
+            付款方式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.DonatedInvoice.None">
+        <member name="P:AllPay.Payment.Integration.CompareByPaymentMethodAttribute.ConfirmPropertyNames">
+            <summary>
+            要檢查的屬性欄位名稱(多個以/符號分隔)。
+            </summary>
+        </member>
+        <member name="T:AllPay.Payment.Integration.PrintFlag">
+            <summary>
+            是否列印。
+            </summary>
+        </member>
+        <member name="F:AllPay.Payment.Integration.PrintFlag.None">
             <summary>
             無(當 InvoiceMark=No 時，為該值)。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.DonatedInvoice.Yes">
+        <member name="F:AllPay.Payment.Integration.PrintFlag.Yes">
             <summary>
-            捐贈發票。
+            要列印。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.DonatedInvoice.No">
+        <member name="F:AllPay.Payment.Integration.PrintFlag.No">
             <summary>
-            不捐贈發票。
+            不列印。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.CustomsClearance">
+        <member name="T:AllPay.Payment.Integration.AllocateState">
             <summary>
-            報關方式。
+            撥款狀態。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.CustomsClearance.None">
+        <member name="F:AllPay.Payment.Integration.AllocateState.ALL">
             <summary>
-            無(當 InvoiceMark=No 且 TaxType 不是零稅率時，為該值)。
+            全部。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.CustomsClearance.CustomsExport">
+        <member name="F:AllPay.Payment.Integration.AllocateState.NoAppropriations">
             <summary>
-            經海關出口(當 TaxType 為零稅率時，可設定該值)。
+            未撥款。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.CustomsClearance.ECACustomsExport">
+        <member name="F:AllPay.Payment.Integration.AllocateState.Appropriations">
             <summary>
-            非經海關出口(當 TaxType 為零稅率時，可設定該值)。
+            已撥款。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.DeviceType">
+        <member name="T:AllPay.Payment.Integration.RequiredByDonationAttribute">
             <summary>
-            裝置類型。
+            依據是否捐贈電子發票檢查該欄位是否必填的類別。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.DeviceType.PC">
+        <member name="M:AllPay.Payment.Integration.RequiredByDonationAttribute.#ctor">
             <summary>
-            桌機版付費頁面。
+            依據是否捐贈電子發票檢查該欄位是否必填的類別建構式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.DeviceType.Mobile">
-            <summary>
-            行動裝置版付費頁面。
-            </summary>
-        </member>
-        <member name="T:AllPay.Payment.Integration.ValidatePlatformArgumentsAttribute">
-            <summary>
-            依據 PlatformID 檢核比較可填寫資料欄位的類別。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.ValidatePlatformArgumentsAttribute.#ctor">
-            <summary>
-            依據 PlatformID 檢核比較可填寫資料欄位的類別建構式。
-            </summary>
-        </member>
-        <member name="M:AllPay.Payment.Integration.ValidatePlatformArgumentsAttribute.IsValid(System.Object)">
+        <member name="M:AllPay.Payment.Integration.RequiredByDonationAttribute.IsValid(System.Object)">
             <summary>
             是否檢核通過。
             </summary>
             <param name="value">要檢核的物件類別。</param>
             <returns>驗證成功為 True 否則為 False。</returns>
         </member>
-        <member name="T:AllPay.Payment.Integration.Logger">
+        <member name="T:AllPay.Payment.Integration.PaymentMethod">
             <summary>
-            記錄檔處理的靜態類別。
+            付款方式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.Logger.LOGGER_FULL_FILENAME">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.ALL">
             <summary>
-            記錄檔儲存路徑格式。
+            不指定付款方式。
             </summary>
         </member>
-        <member name="F:AllPay.Payment.Integration.Logger.swLogger">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.Credit">
             <summary>
-            處理 IO 資料的物件。
+            信用卡付費。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.Logger.#cctor">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.WebATM">
             <summary>
-            記錄檔處理的靜態類別建構式。
+            網路 ATM。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.Logger.Write(System.String)">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.ATM">
             <summary>
-            寫入記錄檔。
-            </summary>
-            <param name="message">要寫入的訊息。</param>
-        </member>
-        <member name="M:AllPay.Payment.Integration.Logger.WriteLine(System.String)">
-            <summary>
-            寫入一行記錄檔。
-            </summary>
-            <param name="message">要寫入的訊息。</param>
-        </member>
-        <member name="M:AllPay.Payment.Integration.Logger.CreateInstance">
-            <summary>
-            建立處理 IO 資料的物件實例。
+            自動櫃員機。
             </summary>
         </member>
-        <member name="P:AllPay.Payment.Integration.Logger.FileName">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.CVS">
             <summary>
-            取得目前要使用的記錄檔檔名。
+            超商代碼。
             </summary>
         </member>
-        <member name="T:AllPay.Payment.Integration.RequiredByCarruerTypeAttribute">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.Alipay">
             <summary>
-            依據載具類型檢查該欄位是否必填的類別。
+            支付寶。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByCarruerTypeAttribute.#ctor">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.Tenpay">
             <summary>
-            依據載具類型檢查該欄位是否必填的類別建構式。
+            財付通。
             </summary>
         </member>
-        <member name="M:AllPay.Payment.Integration.RequiredByCarruerTypeAttribute.IsValid(System.Object)">
+        <member name="F:AllPay.Payment.Integration.PaymentMethod.TopUpUsed">
             <summary>
-            是否檢核通過。
+            儲值消費。
             </summary>
-            <param name="value">要檢核的物件類別。</param>
-            <returns>驗證成功為 True 否則為 False。</returns>
         </member>
     </members>
 </doc>
